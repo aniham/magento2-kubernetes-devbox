@@ -443,6 +443,8 @@ bash ./<test-name>.sh
  1. Make sure that you used `magento2-devbox` directory as project root in PHP Storm (not `magento2-devbox/magento`)
  1. If project opened in PhpStorm looks broken, close PhpStorm  and remove `magento2-devbox/.idea`. Run `./magento2-devbox/scripts/host/configure_php_storm.sh`. After opening project in PhpStorm again everything should look good
  1. Please make sure that currently installed software, specified in [requirements section](#requirements), meets minimum version requirement
+ 
+    **NOTE**  It appears that a [bug](https://github.com/helm/helm/issues/6374) in kubernetes 1.16 is causing `helm init` to fail.  If have the latest version of kubernetes and are running into this issue, you can roll back by running `minikube config set kubernetes-version v1.15.4`.
  1. Be careful if your OS is case-insensitive, NFS might break the symlinks if you cd into the wrong casing and you power the devbox up. Just be sure to cd in to the casing the directory was originally created as.
  1. Cannot run unit tests from PHPStorm on Magento 2.2, see possible solution [here](https://github.com/paliarush/magento2-vagrant-for-developers/issues/167)
  1. [Permission denied (publickey)](https://github.com/paliarush/magento2-vagrant-for-developers/issues/165)
